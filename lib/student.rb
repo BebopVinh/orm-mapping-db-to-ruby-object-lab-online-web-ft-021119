@@ -7,7 +7,6 @@ class Student
     student.id = row[0]
     student.name = row[1]
     student.grade = row[2]
-    @@all << student
     student
   end
 
@@ -27,7 +26,9 @@ class Student
       SELECT * FROM students WHERE grade < 12
     SQL
     DB[:conn].execute(sql).map do |student|
-      new_from_db(student)
+      instance = new_from_db(student)
+      @@all << instance
+      instance
     end
   end
 
