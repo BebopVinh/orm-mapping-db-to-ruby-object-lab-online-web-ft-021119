@@ -27,8 +27,6 @@ class Student
     SQL
     DB[:conn].execute(sql).map do |student|
       instance = new_from_db(student)
-      @@all << instance
-      instance
     end
   end
 
