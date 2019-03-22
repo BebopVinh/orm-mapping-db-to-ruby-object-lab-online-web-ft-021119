@@ -3,7 +3,6 @@ class Student
   @@all = []
 
   def self.new_from_db(row)
-    binding.pry
     student = Student.new
     student.id = row[0]
     student.name = row[1]
@@ -14,7 +13,6 @@ class Student
 
   def self.all
     @@all
-    binding.pry
   end
 
   def self.all_students_in_grade_9
