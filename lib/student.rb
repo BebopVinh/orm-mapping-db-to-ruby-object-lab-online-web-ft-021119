@@ -8,7 +8,7 @@ class Student
     student.id = row[0]
     student.name = row[1]
     student.grade = row[2]
-    @@all << student
+    @@all << student unless @@all.find{|student| student.name == row[1]}
     student
   end
 
