@@ -7,11 +7,13 @@ class Student
     student.id = row[0]
     student.name = row[1]
     student.grade = row[2]
+    @@all << student
     student
   end
 
   def self.all
     @@all
+    binding.pry
   end
 
   def self.all_students_in_grade_9
